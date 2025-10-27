@@ -31,8 +31,8 @@
     }
 
     .hero img {
-      width: 160px;
-      height: 160px;
+      width: 260px;
+      height: 260px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid silver;
@@ -42,8 +42,8 @@
 
     @media (min-width: 768px) {
       .hero img {
-        width: 220px;
-        height: 220px;
+        width: 320px;
+        height: 320px;
       }
     }
 
