@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nitish Agrawal — CA Final Student</title>
+<meta name="description" content="Nitish Agrawal — CA Final student in the Finance vertical at Batra Deepak & Associates. Audit & Assurance, Financial Reporting & Accounting, Financial Management & Strategy.">
+<meta name="theme-color" content="#0B1E33">
+
+<meta property="og:title" content="Nitish Agrawal — CA Final Student">
+<meta property="og:description" content="CA Final student · Finance Vertical, Batra Deepak & Associates">
+<meta property="og:image" content="assets/profile.jpg">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230B1E33'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23C9A227' text-anchor='middle'%3ENA%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,600;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy:#0B1E33;
+    --navy-deep:#061320;
+    --paper:#ECE3CC;
+    --brass:#C9A227;
+    --brass-bright:#E8C547;
+    --maroon:#8B2635;
+    --ink:#F1EAD9;
+    --ink-muted:rgba(241,234,217,0.62);
+    --line:rgba(201,162,39,0.16);
+    --line-strong:rgba(201,162,39,0.34);
+    --radius-md:10px;
+    --ease:cubic-bezier(.22,.9,.32,1);
+    --maxw:1140px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--navy);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  body.cursor-ready, body.cursor-ready a, body.cursor-ready button{cursor:none;}
+
+  body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    background-image:repeating-linear-gradient(0deg, rgba(201,162,39,0.035) 0 1px, transparent 1px 38px);
+  }
+
+  a{color:inherit;}
+  img{display:block;max-width:100%;}
+
+  ::selection{background:var(--brass);color:var(--navy-deep);}
+
+  a:focus-visible, button:focus-visible{outline:2px solid var(--brass-bright);outline-offset:3px;}
+
+  /* ---------- custom cursor ---------- */
+  #cursor-ring, #cursor-dot{
+    position:fixed; top:0; left:0;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:9999;
+    transform:translate3d(-100px,-100px,0);
+  }
+  #cursor-ring{
+    width:34px;height:34px;
+    border:1px solid var(--brass);
+    transition:width .2s var(--ease), height .2s var(--ease), border-color .2s var(--ease), opacity .2s var(--ease);
+  }
+  #cursor-dot{
+    width:6px;height:6px;
+    background:var(--brass-bright);
+  }
+  #cursor-ring.is-active{width:54px;height:54px;border-color:var(--maroon);}
+  .ink-trail-dot{
+    position:fixed; top:0; left:0;
+    width:4px; height:4px;
+    border-radius:50%;
+    background:var(--brass);
+    pointer-events:none;
+    z-index:9997;
+    opacity:.55;
+    animation:trailFade .7s var(--ease) forwards;
+  }
+  @keyframes trailFade{
+    to{ opacity:0; transform:scale(.2) translate(var(--tx,0),var(--ty,0)); }
+  }
+
+  .touch-ripple{
+    position:fixed;
+    width:14px;height:14px;
+    border-radius:50%;
+    border:1px solid var(--brass-bright);
+    pointer-events:none;
+    z-index:9997;
+    transform:translate(-50%,-50%) scale(1);
+    animation:rippleOut .6s var(--ease) forwards;
+  }
+  @keyframes rippleOut{
+    to{ transform:translate(-50%,-50%) scale(7); opacity:0; border-width:.5px;}
+  }
+
+  /* ---------- nav ---------- */
+  .topnav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:1.1rem 6vw;
+    background:linear-gradient(180deg, rgba(6,19,32,.88), transparent);
+  }
+  .topnav-mark{font-family:'Fraunces'; font-weight:600; font-size:1.05rem;}
+  .topnav-mark span{color:var(--brass-bright);}
+  .topnav-links{
+    display:flex; gap:1.3rem;
+    font-family:'IBM Plex Mono'; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;
+    overflow-x:auto;
+  }
+  .topnav-links a{text-decoration:none; color:var(--ink-muted); white-space:nowrap; position:relative; padding-bottom:4px;}
+  .topnav-links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1px;
+    background:var(--brass-bright); transition:width .3s var(--ease);
+  }
+  .topnav-links a:hover::after, .topnav-links a:focus-visible::after{width:100%;}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative; height:100vh; min-height:560px; display:flex; align-items:flex-end; overflow:hidden;}
+  .hero-media{position:absolute; inset:0;}
+  .hero-media img{width:100%; height:100%; object-fit:cover; object-position:center top; filter:saturate(.92) contrast(1.05);}
+  .hero-media::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(6,19,32,.18) 0%, rgba(6,19,32,.4) 45%, rgba(6,19,32,.94) 100%);
+  }
+  .hero-media.img-missing{background:radial-gradient(circle at 30% 20%, #16314f, var(--navy-deep));}
+  .hero-media.img-missing::before{
+    content:'Add your photo at assets/profile.jpg';
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:2rem; color:var(--ink-muted);
+    font-family:'IBM Plex Mono'; font-size:.78rem; letter-spacing:.05em;
+  }
+  .hero-grid{
+    position:absolute; inset:-20px;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:48px 48px;
+    pointer-events:none;
+    mix-blend-mode:overlay;
+    opacity:.6;
+    transition:transform .3s var(--ease);
+  }
+  .hero-content{position:relative; z-index:2; padding:0 6vw 9vh; max-width:920px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono'; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--brass-bright); margin-bottom:1rem;
+    opacity:0; animation:fadeUp .8s var(--ease) .15s forwards;
+  }
+  .hero-name{
+    font-family:'Fraunces'; font-weight:600; font-size:clamp(2.6rem,9vw,6.2rem); line-height:.98; letter-spacing:-.01em;
+    opacity:0; animation:fadeUp .8s var(--ease) .3s forwards;
+  }
+  .hero-name em{font-style:italic; font-weight:500; color:var(--paper); display:block;}
+  .hero-tagline{
+    margin-top:1.4rem; max-width:34ch; font-size:1.05rem; font-weight:300; color:var(--ink-muted);
+    opacity:0; animation:fadeUp .8s var(--ease) .5s forwards;
+  }
+  .hero-scroll{
+    margin-top:3rem; display:flex; align-items:center; gap:.6rem;
+    font-family:'IBM Plex Mono'; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-muted);
+    opacity:0; animation:fadeUp .8s var(--ease) .7s forwards;
+  }
+  .hero-scroll svg{animation:bob 2.2s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+  @keyframes fadeUp{from{opacity:0; transform:translateY(16px);} to{opacity:1; transform:translateY(0);}}
+
+  /* ---------- sections ---------- */
+  main{position:relative; z-index:1;}
+  .ledger-section{max-width:var(--maxw); margin:0 auto; padding:7rem 6vw 5rem; border-top:1px solid var(--line);}
+  .folio{font-family:'IBM Plex Mono'; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--brass); margin-bottom:.9rem;}
+  .section-title{font-family:'Fraunces'; font-weight:500; font-style:italic; font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:1.6rem; color:var(--paper);}
+
+  .reveal{opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease);}
+  .reveal.is-visible{opacity:1; transform:none;}
+
+  .bio-text{max-width:62ch; font-size:1.08rem; line-height:1.8; color:var(--ink-muted); font-weight:300;}
+  .bio-text strong{color:var(--paper); font-weight:500;}
+
+  .ledger-table{display:flex; flex-direction:column; border-top:1px solid var(--line);}
+  .ledger-row{
+    display:grid; grid-template-columns:56px 1fr; gap:.3rem 1.6rem;
+    padding:1.7rem 0; border-bottom:1px solid var(--line);
+    transition:transform .4s var(--ease);
+  }
+  .ledger-row:hover{transform:translateX(8px);}
+  .ledger-no{font-family:'IBM Plex Mono'; color:var(--brass); font-size:.95rem; padding-top:.2rem;}
+  .ledger-name{grid-column:2; font-family:'Fraunces'; font-weight:600; font-size:1.3rem; color:var(--paper);}
+  .ledger-desc{grid-column:2; color:var(--ink-muted); font-size:.95rem; font-weight:300; max-width:54ch;}
+  @media (min-width:760px){
+    .ledger-row{grid-template-columns:56px 250px 1fr; align-items:start; gap:1.6rem;}
+    .ledger-name{grid-column:2;}
+    .ledger-desc{grid-column:3;}
+  }
+
+  .letterhead-card{
+    display:flex; gap:2rem; align-items:flex-start; flex-wrap:wrap;
+    border:1px solid var(--line-strong); border-radius:var(--radius-md);
+    background:linear-gradient(160deg, rgba(236,227,204,0.05), rgba(236,227,204,0.015));
+    padding:2.4rem;
+  }
+  .letterhead-mark{
+    flex:0 0 auto; width:84px; height:84px; border-radius:50%;
+    border:1.5px solid var(--brass);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces'; font-weight:600; font-size:1.25rem; color:var(--brass-bright);
+  }
+  .letterhead-info h3{font-family:'Fraunces'; font-weight:600; font-size:1.5rem; color:var(--paper); margin-bottom:.3rem;}
+  .letterhead-role{font-family:'IBM Plex Mono'; font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color:var(--brass); margin-bottom:1rem;}
+  .letterhead-text{max-width:50ch; color:var(--ink-muted); line-height:1.75; font-weight:300; margin-bottom:1.5rem;}
+
+  .magnetic-btn{
+    display:inline-flex; align-items:center; gap:.5rem;
+    font-family:'IBM Plex Mono'; font-size:.76rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--navy-deep); background:var(--brass-bright);
+    padding:.85rem 1.5rem; border-radius:999px; text-decoration:none; border:none;
+    transition:transform .25s var(--ease), background .25s var(--ease);
+  }
+  .magnetic-btn:hover, .magnetic-btn:focus-visible{background:var(--paper);}
+
+  .contact-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-bottom:3.5rem;}
+  .contact-card{
+    display:flex; flex-direction:column; gap:.6rem; padding:1.5rem 1.6rem;
+    border:1px solid var(--line); border-radius:var(--radius-md);
+    text-decoration:none; color:var(--paper); position:relative;
+    transition:transform .35s var(--ease), border-color .35s var(--ease);
+  }
+  .contact-card:hover, .contact-card:focus-visible{border-color:var(--brass); transform:translateY(-5px);}
+  .card-label{
+    font-family:'IBM Plex Mono'; font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--brass);
+    display:flex; align-items:center; gap:.55rem;
+  }
+  .card-label svg{flex:0 0 auto;}
+  .card-value{font-size:.98rem; color:var(--ink-muted); word-break:break-word;}
+  .address-card{cursor:default;}
+
+  .seal-wrap{display:flex; flex-direction:column; align-items:center; gap:1rem; padding:2.5rem 0 1rem; text-align:center;}
+  #seal{
+    width:140px; height:140px; border-radius:50%;
+    border:2px solid var(--brass); background:transparent; color:var(--brass-bright);
+    font-family:'IBM Plex Mono'; font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; line-height:1.4;
+    cursor:pointer; transition:transform .15s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
+  }
+  #seal:hover{box-shadow:0 0 0 7px rgba(201,162,39,0.08);}
+  #seal:active{transform:scale(.92);}
+  #seal.is-stamped{background:var(--maroon); border-color:var(--maroon); color:var(--ink); animation:stampPulse .45s var(--ease);}
+  @keyframes stampPulse{0%{transform:scale(1)}40%{transform:scale(.82) rotate(-3deg)}70%{transform:scale(1.08) rotate(2deg)}100%{transform:scale(1) rotate(0)}}
+  #seal-caption{font-family:'IBM Plex Mono'; font-size:.78rem; color:var(--ink-muted); min-height:1.2em;}
+
+  .fab-whatsapp{
+    position:fixed; bottom:1.6rem; right:1.6rem; z-index:60;
+    width:56px; height:56px; border-radius:50%;
+    background:var(--brass-bright); color:var(--navy-deep);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 22px rgba(0,0,0,.4);
+    transition:transform .3s var(--ease);
+  }
+  .fab-whatsapp:hover, .fab-whatsapp:focus-visible{transform:scale(1.08);}
+
+  footer{
+    text-align:center; padding:3rem 6vw 4rem;
+    font-family:'IBM Plex Mono'; font-size:.72rem; color:var(--ink-muted);
+    border-top:1px solid var(--line);
+  }
+
+  @media (max-width:600px){
+    .ledger-section{padding:5.5rem 6vw 3.5rem;}
+    .letterhead-card{padding:1.8rem;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
+    #cursor-ring, #cursor-dot, .ink-trail-dot, .touch-ripple{display:none !important;}
+    .reveal{opacity:1 !important; transform:none !important;}
+    .eyebrow, .hero-name, .hero-tagline, .hero-scroll{opacity:1 !important;}
+  }
+</style>
+</head>
+<body>
+
+  <div id="cursor-ring"></div>
+  <div id="cursor-dot"></div>
+
+  <nav class="topnav">
+    <div class="topnav-mark">N<span>·</span>A</div>
+    <div class="topnav-links">
+      <a href="#profile">Profile</a>
+      <a href="#practice">Practice</a>
+      <a href="#engagement">Engagement</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="hero-section">
+    <div class="hero-media" id="hero-media">
+      <img id="hero-photo" src="assets/profile.jpg" alt="Photo of Nitish Agrawal"
+        onerror="this.closest('.hero-media').classList.add('img-missing'); this.remove();">
+    </div>
+    <div class="hero-grid" id="hero-grid"></div>
+    <div class="hero-content">
+      <p class="eyebrow">CA Final Student · Finance Vertical</p>
+      <h1 class="hero-name">Nitish<br><em>Agrawal</em></h1>
+      <p class="hero-tagline">Reading balance sheets like stories, and auditing the details everyone else skips.</p>
+      <div class="hero-scroll">
+        <span>Scroll the ledger</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M5 12l7 7 7-7"/></svg>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="ledger-section" id="profile">
+      <p class="folio reveal">Folio No. 01</p>
+      <h2 class="section-title reveal">Profile</h2>
+      <p class="bio-text reveal">
+        <strong>Nitish Agrawal</strong> is in the final stretch of the Chartered Accountancy programme, currently sharpening his practical edge in the <strong>Finance vertical at Batra Deepak &amp; Associates</strong>. His work sits between the ledger and the larger picture — verifying figures through audit and assurance, shaping financial reporting that holds up to scrutiny, and using financial management to read what a business's numbers are really saying. Based out of Saraipali, Chhattisgarh, he approaches every assignment the way a good auditor approaches a balance sheet: carefully, and without skipping the footnotes.
+      </p>
+    </section>
+
+    <section class="ledger-section" id="practice">
+      <p class="folio reveal">Folio No. 02</p>
+      <h2 class="section-title reveal">Areas of Practice</h2>
+      <div class="ledger-table">
+        <div class="ledger-row reveal">
+          <span class="ledger-no">01</span>
+          <span class="ledger-name">Audit &amp; Assurance</span>
+          <span class="ledger-desc">Testing controls and tracing evidence until the numbers earn their sign-off.</span>
+        </div>
+        <div class="ledger-row reveal">
+          <span class="ledger-no">02</span>
+          <span class="ledger-name">Financial Reporting &amp; Accounting</span>
+          <span class="ledger-desc">Turning transactions into statements that read true to the business behind them.</span>
+        </div>
+        <div class="ledger-row reveal">
+          <span class="ledger-no">03</span>
+          <span class="ledger-name">Financial Management &amp; Strategy</span>
+          <span class="ledger-desc">Reading cash flow and capital structure for what they say about where a business is headed.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="ledger-section" id="engagement">
+      <p class="folio reveal">Folio No. 03</p>
+      <h2 class="section-title reveal">Current Engagement</h2>
+      <div class="letterhead-card reveal tilt">
+        <div class="letterhead-mark">BDA</div>
+        <div class="letterhead-info">
+          <h3>Batra Deepak &amp; Associates</h3>
+          <p class="letterhead-role">Finance Vertical</p>
+          <p class="letterhead-text">Nitish currently works within the Finance vertical at Batra Deepak &amp; Associates, applying classroom rigor to live client numbers — from reporting cycles to financial analysis.</p>
+          <a class="magnetic-btn" href="https://bdaca.com" target="_blank" rel="noopener">Visit bdaca.com →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ledger-section" id="contact">
+      <p class="folio reveal">Folio No. 04</p>
+      <h2 class="section-title reveal">Get in Touch</h2>
+
+      <div class="contact-grid">
+        <a class="contact-card reveal tilt" href="tel:+917828780780">
+          <span class="card-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Phone
+          </span>
+          <span class="card-value">+91 78287 80780</span>
+        </a>
+
+        <a class="contact-card reveal tilt" href="https://wa.me/917828780780" target="_blank" rel="noopener">
+          <span class="card-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 1 1-4.1-7.3L21 3l-1.2 4.1A8.46 8.46 0 0 1 21 11.5z"/><path d="M7 11h.01M11 11h.01M15 11h.01"/></svg>
+            WhatsApp
+          </span>
+          <span class="card-value">Chat now</span>
+        </a>
+
+        <a class="contact-card reveal tilt" href="mailto:nitishagrawalbda@gmail.com">
+          <span class="card-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Email
+          </span>
+          <span class="card-value">nitishagrawalbda@gmail.com</span>
+        </a>
+
+        <a class="contact-card reveal tilt" href="https://www.linkedin.com/in/nitish-agrawal-776439236" target="_blank" rel="noopener">
+          <span class="card-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="12" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M9.5 10.5 14.5 8M9.5 13.5 14.5 16"/></svg>
+            LinkedIn
+          </span>
+          <span class="card-value">Connect / view profile</span>
+        </a>
+
+        <a class="contact-card reveal tilt" href="https://www.instagram.com/nattu.780/" target="_blank" rel="noopener">
+          <span class="card-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="4"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+            Instagram
+          </span>
+          <span class="card-value">@nattu.780</span>
+        </a>
+
+        <div class="contact-card address-card reveal tilt">
+          <span class="card-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Address
+          </span>
+          <span class="card-value">Baloda, Saraipali, Mahasamund, C.G. 493558</span>
+        </div>
+      </div>
+
+      <div class="seal-wrap reveal">
+        <button id="seal" type="button" aria-pressed="false">Press to<br>verify</button>
+        <p id="seal-caption">Tap the seal to verify this profile.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Designed &amp; maintained by Nitish Agrawal · <span id="year"></span></p>
+  </footer>
+
+  <a class="fab-whatsapp" href="https://wa.me/917828780780" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 1 1-4.1-7.3L21 3l-1.2 4.1A8.46 8.46 0 0 1 21 11.5z"/><path d="M7 11h.01M11 11h.01M15 11h.01"/></svg>
+  </a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isFinePointer = window.matchMedia('(pointer: fine)').matches;
+  var supportsTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+
+  /* ---------- scroll reveal ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* ---------- seal stamp ---------- */
+  var seal = document.getElementById('seal');
+  var sealCaption = document.getElementById('seal-caption');
+  var stamped = false;
+  seal.addEventListener('click', function () {
+    stamped = !stamped;
+    seal.classList.toggle('is-stamped', stamped);
+    seal.setAttribute('aria-pressed', String(stamped));
+    seal.innerHTML = stamped ? 'Verified<br>profile' : 'Press to<br>verify';
+    sealCaption.textContent = stamped
+      ? 'Verified · CA Final Student · Saraipali, C.G.'
+      : 'Tap the seal to verify this profile.';
+  });
+
+  /* ---------- desktop: custom cursor + magnetic + tilt + parallax ---------- */
+  if (!reducedMotion && isFinePointer) {
+    document.body.classList.add('cursor-ready');
+
+    var ring = document.getElementById('cursor-ring');
+    var dot = document.getElementById('cursor-dot');
+    var ringPos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    var dotPos = { x: ringPos.x, y: ringPos.y };
+    var mouse = { x: ringPos.x, y: ringPos.y };
+
+    window.addEventListener('mousemove', function (e) {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    function tick() {
+      ringPos.x += (mouse.x - ringPos.x) * 0.14;
+      ringPos.y += (mouse.y - ringPos.y) * 0.14;
+      dotPos.x += (mouse.x - dotPos.x) * 0.35;
+      dotPos.y += (mouse.y - dotPos.y) * 0.35;
+      ring.style.transform = 'translate3d(' + (ringPos.x - 17) + 'px,' + (ringPos.y - 17) + 'px,0)';
+      dot.style.transform = 'translate3d(' + (dotPos.x - 3) + 'px,' + (dotPos.y - 3) + 'px,0)';
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    window.addEventListener('mousedown', function () { ring.classList.add('is-active'); });
+    window.addEventListener('mouseup', function () { ring.classList.remove('is-active'); });
+
+    document.querySelectorAll('a, button').forEach(function (el) {
+      el.addEventListener('mouseenter', function () { ring.classList.add('is-active'); });
+      el.addEventListener('mouseleave', function () { ring.classList.remove('is-active'); });
+    });
+
+    /* ink trail */
+    var moveCount = 0;
+    window.addEventListener('mousemove', function (e) {
+      moveCount++;
+      if (moveCount % 3 !== 0) return;
+      var trail = document.createElement('div');
+      trail.className = 'ink-trail-dot';
+      trail.style.left = e.clientX + 'px';
+      trail.style.top = e.clientY + 'px';
+      trail.style.setProperty('--tx', (Math.random() * 10 - 5) + 'px');
+      trail.style.setProperty('--ty', (Math.random() * 10 - 5) + 'px');
+      document.body.appendChild(trail);
+      setTimeout(function () { trail.remove(); }, 700);
+    });
+
+    /* magnetic buttons */
+    document.querySelectorAll('.magnetic-btn, .fab-whatsapp').forEach(function (btn) {
+      btn.addEventListener('mousemove', function (e) {
+        var rect = btn.getBoundingClientRect();
+        var relX = e.clientX - rect.left - rect.width / 2;
+        var relY = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = 'translate(' + (relX * 0.25) + 'px,' + (relY * 0.25) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+    });
+
+    /* card tilt */
+    document.querySelectorAll('.tilt').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var relX = (e.clientX - rect.left) / rect.width - 0.5;
+        var relY = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = 'perspective(800px) rotateX(' + (relY * -6) + 'deg) rotateY(' + (relX * 6) + 'deg) translateY(-3px)';
+      });
+      card.addEventListener('mouseleave', function () { card.style.transform = ''; });
+    });
+
+    /* hero parallax grid */
+    var heroSection = document.getElementById('hero-section');
+    var heroGrid = document.getElementById('hero-grid');
+    heroSection.addEventListener('mousemove', function (e) {
+      var relX = e.clientX / window.innerWidth - 0.5;
+      var relY = e.clientY / window.innerHeight - 0.5;
+      heroGrid.style.transform = 'translate(' + (relX * -18) + 'px,' + (relY * -18) + 'px)';
+    });
+    heroSection.addEventListener('mouseleave', function () {
+      heroGrid.style.transform = '';
+    });
+  }
+
+  /* ---------- touch: ripple + parallax ---------- */
+  if (!reducedMotion && supportsTouch) {
+    document.addEventListener('touchstart', function (e) {
+      var t = e.touches[0];
+      if (!t) return;
+      var ripple = document.createElement('div');
+      ripple.className = 'touch-ripple';
+      ripple.style.left = t.clientX + 'px';
+      ripple.style.top = t.clientY + 'px';
+      document.body.appendChild(ripple);
+      setTimeout(function () { ripple.remove(); }, 650);
+    }, { passive: true });
+
+    var heroGridT = document.getElementById('hero-grid');
+    var heroSectionT = document.getElementById('hero-section');
+    heroSectionT.addEventListener('touchmove', function (e) {
+      var t = e.touches[0];
+      if (!t) return;
+      var relX = t.clientX / window.innerWidth - 0.5;
+      var relY = t.clientY / window.innerHeight - 0.5;
+      heroGridT.style.transform = 'translate(' + (relX * -14) + 'px,' + (relY * -14) + 'px)';
+    }, { passive: true });
+  }
+</script>
+</body>
+</html>
